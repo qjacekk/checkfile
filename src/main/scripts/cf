@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# place this script and checkfile-*-jar-with-dependencies.jar in one directory
+# that is on the PATH
+JAR=checkfile-1.0-SNAPSHOT-jar-with-dependencies.jar
+
+# Determine the path to the script's directory
+APPATH=$( cd "$(dirname "$0")" ; pwd -P )
+
+# Run the application
+exec java -jar "${APPATH}/${JAR}" "$@"
